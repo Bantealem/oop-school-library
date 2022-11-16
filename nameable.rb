@@ -8,7 +8,7 @@ class Decorator < Nameable
   attr_accessor :nameable
 
   def initialize(nameable)
-    super
+    super()
     @nameable = nameable
   end
 
@@ -17,10 +17,14 @@ class Decorator < Nameable
   end
 end
 
-class Trimmer < Decorator
-  attr_accessor :nameable
-
+class CapitalizeDecorator < Decorator
   def correct_name
-    @nameable.correct_name.strip.slice(0, 10) if @nameable.name.length > 10
+    @nameable.correct_name.upcase
+  end
+end
+
+class TrimmerDecorator < Decorator
+  def correct_name
+    @nameable.correct_name.slice(0..10)
   end
 end
