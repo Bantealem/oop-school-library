@@ -1,6 +1,8 @@
 require_relative 'person'
 
 class Student < Person
+  attr_accessor :classrom
+
   def initialize
     super()
     @classrom = classrom
