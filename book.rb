@@ -8,4 +8,9 @@ class Book
     @author = author
     @rentals = []
   end
+
+  def add_rentals(person, date)
+    # *the book itself should be sent as a parameter to create the new rental achieving the 'has-many' association.
+    Rental.new(date, self, person)
+  end
 end
