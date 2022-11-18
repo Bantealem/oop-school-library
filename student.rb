@@ -1,11 +1,10 @@
 require_relative 'person'
 
 class Student < Person
-  attr_accessor :classrom
+  attr_accessor :classroom
 
   def initialize
-    super()
-    @classrom = classrom
+    super(age, name, parent_permission: true)
   end
 
   def play_hooky
