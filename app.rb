@@ -39,6 +39,8 @@ class App
       create_a_rental
     when 6
       list_rentals_for_a_given
+    when 7
+      quit_app
     else
       'invalid input pls try again'
     end
