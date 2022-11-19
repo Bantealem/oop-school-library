@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'app'
+require_relative 'app'
 
 def main
   app = App.new
-  app.excute while 1.positive?
+  app.run
 end
 main

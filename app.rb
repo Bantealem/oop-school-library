@@ -1,9 +1,9 @@
-require 'book'
-require 'classroom'
-require 'person'
-require 'rentals'
-require 'student'
-require 'teacher'
+require_relative 'book'
+require_relative 'classroom'
+require_relative 'person'
+require_relative 'rentals'
+require_relative 'student'
+require_relative 'teacher'
 
 class App
   def initialize
@@ -23,9 +23,7 @@ class App
     puts '7 - Exit'
   end
 
-  def excute
-    menu
-    user_input = gets.chomp.to_i
+  def execute(user_input)
     case user_input
     when 1
       list_all_books
@@ -39,10 +37,20 @@ class App
       create_a_rental
     when 6
       list_rentals_for_a_given
-    when 7
-      quit_app
     else
       'invalid input pls try again'
+    end
+  end
+
+  def run
+    loop do
+      menu
+      user_input = gets.chomp
+      if user_input == '7'
+        puts 'Thank you for using this app!'
+        break
+      end
+      execute(user_input)
     end
   end
 
