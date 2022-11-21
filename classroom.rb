@@ -7,7 +7,7 @@ class Classroom
     @students = []
   end
 
-  # Instead of setter for entire collection a method to add animals one by one
+  # Instead of setter for entire collection a method to add students one by one
   def add_student(student)
     @students.push(student)
     student.classrom = self
