@@ -93,6 +93,9 @@ class App
   end
 
   def display_menu
+    puts '-' * 50
+    puts "|\tWelcome to School Library App!\t\t |"
+    puts '-' * 50
     puts 'Please choose an option by entering a number:'
     puts '1 - List all books'
     puts '2 - List all people'
